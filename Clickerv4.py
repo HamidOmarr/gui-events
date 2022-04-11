@@ -4,7 +4,7 @@ Window.counter = 0
 Counterhelp = 0
 
 
-def PlusCounter():
+def PlusCounter(event):
     global Counterhelp
     Counterhelp = 1
     Window.counter += 1
@@ -14,7 +14,7 @@ def PlusCounter():
     if Window.counter == 0:
         Window['background']='gray'
 
-def MinCounter():
+def MinCounter(event):
     global Counterhelp
     Counterhelp = 2
     Window.counter -= 1
@@ -56,6 +56,9 @@ Omlaag.pack(padx = 20,pady = 5)
 
 Labels.bind("<Enter>", MuisHover)
 Labels.bind("<Leave>", MuisLeave)
-Labels.bind('<Double-Button>',DubbelClick)
-
+Labels.bind('<Double-Button-1>',DubbelClick)
+Window.bind('<space>',DubbelClick)
+Window.bind('a',PlusCounter)
+Window.bind('-',MinCounter)
+     
 Window.mainloop()
