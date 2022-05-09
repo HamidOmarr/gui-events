@@ -22,13 +22,9 @@ def Labeltext(event):
         Window.destroy()
     
 def ButtonDing(event):
-    Buttonknop['text'] = random.choice(Knoppenlist)
-    if Window['text'] == '<space>':
-        Window.bind('<space>')
-        Window.unbind('<Button>')
+    a = Buttonknop['text'] = random.choice(Knoppenlist)
+    return a
 
-    # Buttonknop.unbind('<Button>')
-    # Buttonknop.bind('<space>')
 
 
 
@@ -41,7 +37,10 @@ LabelTijd = Label(Window, text='Tijd:  ')
 LabelTijd.pack(padx = 20,pady = 7)
 Buttonknop.pack_forget()
 Startknop.pack(padx= 20, pady= 7)
-Window.bind('<Button>',ButtonDing)
+Window.bind('2',ButtonDing)
+if Window['text'] == '<Button>':
+    Window.bind('<Button>',ButtonDing)
+
 Window.bind('1', Labeltext)
 
 

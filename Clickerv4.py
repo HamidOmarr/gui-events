@@ -58,7 +58,7 @@ Labels.bind("<Enter>", MuisHover)
 Labels.bind("<Leave>", MuisLeave)
 Labels.bind('<Double-Button-1>',DubbelClick)
 Window.bind('<space>',DubbelClick)
-Window.bind('a',PlusCounter)
+Window.bind('+',PlusCounter)
 Window.bind('-',MinCounter)
      
 Window.mainloop()
